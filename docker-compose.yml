@@ -14,3 +14,10 @@ services:
     image: mysql:5.7
     environment:
       - MYSQL_ROOT_PASSWORD=1234
+
+  oncall-admin:
+    image: phamlamvuong/oncall-admin:0.0.1
+    ports:
+      - "16652:16652"
+    volumes:
+      - ./configs/oncall-admin/config.dev.yaml:/home/oncall/source/configs/config.dev.yaml
